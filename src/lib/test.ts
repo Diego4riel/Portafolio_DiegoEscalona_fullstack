@@ -1,1 +1,1 @@
-export const test = "ok"
+export const test = 'ok';
