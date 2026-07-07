@@ -1,12 +1,22 @@
-import { Button } from '@/components/ui/button';
+// src/App.tsx
+import { Navbar } from '@/components/layout/navbar'
+import { Hero } from '@/components/sections/hero'
+import { About } from '@/components/sections/about'
+import { Projects } from '@/components/sections/projects'
+import { Skills } from '@/components/sections/skills'
+import { Contact } from '@/components/sections/contact'
 
 function App() {
   return (
-    <div className="flex min-h-screen items-center justify-center">
-      <h1 className="text-4xl font-bold text-blue-600">Tailwind funcionando</h1>
-      <Button>Botón de prueba</Button>
+    <div className="dark">
+      <Navbar />
+      <Hero />
+      <About />
+      <Projects />
+      <Skills />
+      <Contact />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

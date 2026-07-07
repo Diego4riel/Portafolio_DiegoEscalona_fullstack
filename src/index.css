@@ -1,1 +1,78 @@
-@import 'tailwindcss';
+@theme {
+  --radius: 1.25rem;
+  --text-hero: 2.75rem;
+  --text-hero--line-height: 1.2;
+  --text-hero--font-weight: 800;
+  --text-hero--letter-spacing: -0.01em;
+  --text-h2: 1.75rem;
+  --text-h2--font-weight: 700;
+  --container-content: 1200px;
+  --spacing-section: 5rem;
+}
+
+.dark {
+  --background: oklch(0.08 0 0);
+  --foreground: oklch(0.98 0 0);
+  --card: oklch(0.16 0 0 / 50%);
+  --card-foreground: oklch(0.95 0 0);
+  --muted: oklch(0.25 0 0);
+  --muted-foreground: oklch(0.75 0 0);
+  --secondary: oklch(0.3 0 0);
+  --secondary-foreground: oklch(0.95 0 0);
+  --border: oklch(1 0 0 / 12%);
+  --ring: oklch(1 0 0 / 20%);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: var(--radius);
+  --radius-full: 9999px;
+}
+
+/* Utilidades custom: navbar, texturas, cards */
+@layer utilities {
+  .nav-pill {
+    background: oklch(0.1 0 0 / 80%);
+    backdrop-filter: blur(20px);
+    border-radius: 9999px;
+    border: 1px solid var(--border);
+  }
+
+  .card-glass {
+    background: var(--card);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+  }
+
+  .texture-diagonal {
+    background-image: repeating-linear-gradient(
+      -45deg, oklch(1 0 0 / 4%) 0px, oklch(1 0 0 / 4%) 1px,
+      transparent 1px, transparent 12px
+    );
+  }
+
+  .texture-wood {
+    background-image: repeating-linear-gradient(
+      90deg, oklch(0.14 0 0) 0px, oklch(0.16 0 0) 2px, oklch(0.12 0 0) 4px
+    );
+  }
+
+  .texture-diagonal-strong {
+    background:
+      repeating-linear-gradient(-45deg, oklch(1 0 0 / 6%) 0px, oklch(1 0 0 / 6%) 2px, transparent 2px, transparent 16px),
+      linear-gradient(135deg, oklch(0.05 0 0), oklch(0.1 0 0));
+  }
+}
