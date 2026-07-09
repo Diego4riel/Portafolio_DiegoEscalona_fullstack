@@ -1,5 +1,10 @@
 // src/components/sections/projects.tsx
 import { SectionWrapper } from '@/components/shared/section-wrapper'
+import { SectionTitle } from '@/components/shared/section-title'
+import { Card, CardContent } from '@/components/ui/card'
+import { Grid } from '@/components/shared/grid'
+import projectsbg from '@/assets/projectsbg.jpg'
+
 
 interface Project {
   title: string
@@ -31,12 +36,12 @@ const projects: Project[] = [
 
 export function Projects() {
   return (
-    <SectionWrapper texture="diagonal" id="proyectos">
-      <h2 className="text-h2 text-foreground mb-10">Mis Proyectos</h2>
+    <SectionWrapper bgImage={projectsbg} id="proyectos">
+      <SectionTitle title="Mis Proyectos" />
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <Grid cols={{ base: 1, md: 3 }} gap="lg">
         {projects.map((project) => (
-          <article key={project.title} className="card-glass overflow-hidden">
+          <Card key={project.title}>
             <div className="aspect-video bg-muted">
               <img
                 src={project.image}
@@ -45,7 +50,7 @@ export function Projects() {
               />
             </div>
 
-            <div className="p-6">
+            <CardContent>
               <h3 className="text-lg font-semibold text-foreground mb-2">
                 {project.title}
               </h3>
@@ -62,10 +67,10 @@ export function Projects() {
                   />
                 ))}
               </div>
-            </div>
-          </article>
+            </CardContent>
+          </Card>
         ))}
-      </div>
+      </Grid>
     </SectionWrapper>
   )
 }

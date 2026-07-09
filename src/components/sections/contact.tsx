@@ -1,12 +1,13 @@
 // src/components/sections/contact.tsx
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
 import { SectionWrapper } from '@/components/shared/section-wrapper'
-import deskImage from '@/assets/desk-workspace.png'
+import contactfill from '@/assets/contactfill.jpg'
+import contactBg from '@/assets/contactbg.jpg'
 
 
 export function Contact() {
   return (
-    <SectionWrapper texture="none" id="contacto">
+    <SectionWrapper bgImage={contactBg} id="contacto">
       <div className="relative">
         {/* Fondo de ondas */}
         <svg
@@ -47,7 +48,7 @@ export function Contact() {
 
           <div className="rounded-lg overflow-hidden">
             <img
-              src={deskImage}
+              src={contactfill}
               alt="Espacio de trabajo"
               className="w-full h-full object-cover"
             />
@@ -55,10 +56,10 @@ export function Contact() {
         </div>
 
         <div className="relative z-10 flex items-center gap-4 mt-16 pt-8 border-t border-border">
-          <a href="https://github.com" target="_blank" rel="noreferrer">
+          <a href="https://github.com/Diego4riel" target="_blank" rel="noreferrer">
             <FaGithub size={20} className="text-foreground/70 hover:text-foreground transition-colors" />
           </a>
-          <a href="https://linkedin.com" target="_blank" rel="noreferrer">
+          <a href="https://linkedin.com/in/diego-escalona" target="_blank" rel="noreferrer">
             <FaLinkedin size={20} className="text-foreground/70 hover:text-foreground transition-colors" />
           </a>
           <p className="text-sm text-muted-foreground">

@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 @theme {
   --radius: 1.25rem;
   --text-hero: 2.75rem;
@@ -44,11 +46,20 @@
 /* Utilidades custom: navbar, texturas, cards */
 @layer utilities {
   .nav-pill {
-    background: oklch(0.1 0 0 / 80%);
-    backdrop-filter: blur(20px);
-    border-radius: 9999px;
-    border: 1px solid var(--border);
-  }
+  background: linear-gradient(
+    180deg,
+    oklch(1 0 0 / 12%) 0%,
+    oklch(0.15 0 0 / 65%) 100%
+  );
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border-radius: 9999px;
+  border: 1px solid oklch(1 0 0 / 18%);
+  box-shadow:
+    0 8px 32px oklch(0 0 0 / 40%),
+    inset 0 1px 0 oklch(1 0 0 / 25%),
+    inset 0 -1px 0 oklch(0 0 0 / 20%);
+}
 
   .card-glass {
     background: var(--card);
@@ -75,4 +86,8 @@
       repeating-linear-gradient(-45deg, oklch(1 0 0 / 6%) 0px, oklch(1 0 0 / 6%) 2px, transparent 2px, transparent 16px),
       linear-gradient(135deg, oklch(0.05 0 0), oklch(0.1 0 0));
   }
+}
+
+html {
+  scroll-behavior: smooth;
 }

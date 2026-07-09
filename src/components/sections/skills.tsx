@@ -1,5 +1,10 @@
 // src/components/sections/skills.tsx
 import { SectionWrapper } from '@/components/shared/section-wrapper'
+import { SectionTitle } from '@/components/shared/section-title'
+import { Badge } from '@/components/ui/badge'
+import { Grid } from '@/components/shared/grid'
+import skillsBg from '@/assets/skillsbg.jpg'
+
 
 const skills = [
   'HTML', 'CSS', 'Java', 'Python', 'Javascript', 'C#',
@@ -11,19 +16,16 @@ const skills = [
 
 export function Skills() {
   return (
-    <SectionWrapper texture="diagonal-strong" id="habilidades">
-      <h2 className="text-h2 text-foreground mb-10">Mis Habilidades</h2>
+    <SectionWrapper bgImage={skillsBg} id="habilidades">
+      <SectionTitle title="Mis Habilidades" />
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
+      <Grid cols={{ base: 2, sm: 3, md: 6 }} gap="sm">
         {skills.map((skill) => (
-          <span
-            key={skill}
-            className="bg-secondary text-secondary-foreground px-6 py-3 rounded-sm font-medium text-center"
-          >
+          <Badge key={skill} className="justify-center">
             {skill}
-          </span>
+          </Badge>
         ))}
-      </div>
+      </Grid>
     </SectionWrapper>
   )
 }
