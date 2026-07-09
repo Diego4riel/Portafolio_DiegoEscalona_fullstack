@@ -14,31 +14,31 @@ Portafolio personal desarrollado con React, TypeScript y Vite, mostrando proyect
 
 ## 📦 Instalación
 
-\`\`\`bash
+```bash
 npm install
-\`\`\`
+```
 
 ## 🖥️ Desarrollo
 
-\`\`\`bash
+```bash
 npm run dev
-\`\`\`
+```
 
 ## 🏗️ Build
 
-\`\`\`bash
+```bash
 npm run build
-\`\`\`
+```
 
 ## 🔍 Linting
 
-\`\`\`bash
+```bash
 npm run lint
-\`\`\`
+```
 
 ## 📁 Estructura del proyecto
 
-\`\`\`
+```
 src/
 ├── assets/
 ├── components/
@@ -54,9 +54,9 @@ src/
 ├── types/
 ├── App.tsx
 └── main.tsx
-\`\`\`
+```
 
 ## 🌿 Estrategia de ramas
 
-- \`main\`: rama estable, lista para producción
-- \`develop\`: rama de desarrollo activo
+- ```\main\```: rama estable, lista para producción
+- ```\develop\```: rama de desarrollo activo
