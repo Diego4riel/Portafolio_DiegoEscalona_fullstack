@@ -1,8 +1,8 @@
 // src/components/sections/hero.tsx
-import { Button } from '@/components/ui/button'
-import { Glow } from '@/components/shared/glow'
-import heroBg from '@/assets/hero_bg.jpg'
-import logoDE from '@/assets/logo_DE.png'
+import { Button } from '@/components/ui/button';
+import { Glow } from '@/components/shared/glow';
+import heroBg from '@/assets/hero_bg.jpg';
+import logoDE from '@/assets/logo_DE.png';
 
 export function Hero() {
   return (
@@ -24,19 +24,22 @@ export function Hero() {
 
       <div className="relative z-10 flex flex-col items-center">
         <h1 className="text-hero text-center uppercase">
-          <span className="text-foreground">Transformando ideas</span><br />
+          <span className="text-foreground">Transformando ideas</span>
+          <br />
           <span className="text-foreground">en software </span>
           <span className="text-muted-foreground">escalable</span>
           <span className="text-foreground">.</span>
         </h1>
         <p className="text-muted-foreground text-center mt-4 max-w-2xl">
-          Arquitectura digital de alto rendimiento que conecta datos, lógica de negocio
-          y diseño visual en un flujo continuo y estructurado.
+          Arquitectura digital de alto rendimiento que conecta datos, lógica de negocio y diseño
+          visual en un flujo continuo y estructurado.
         </p>
-        <Button variant="secondary" size="lg" className="mt-8">
-          Descargar CV
-        </Button>
+        <a href="/Curriculum_Diego.pdf" download="Curriculum_Diego.pdf" className="mt-8">
+          <Button variant="secondary" size="lg">
+            Descargar CV
+          </Button>
+        </a>
       </div>
     </section>
-  )
+  );
 }

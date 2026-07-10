@@ -82,9 +82,11 @@ export function About() {
 
       {/* Botón descargar CV */}
       <div className="mt-10">
-        <Button variant="secondary" size="lg">
-          Descargar CV
-        </Button>
+        <a href="/Curriculum_Diego.pdf" download="Curriculum_Diego.pdf" className="mt-8">
+          <Button variant="secondary" size="lg">
+            Descargar CV
+          </Button>
+        </a>
       </div>
     </SectionWrapper>
   )
