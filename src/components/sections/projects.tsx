@@ -2,37 +2,12 @@
 import { SectionWrapper } from '@/components/shared/section-wrapper'
 import { SectionTitle } from '@/components/shared/section-title'
 import { Card, CardContent } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
 import { Grid } from '@/components/shared/grid'
+import { projects } from '@/data/projects'
 import projectsbg from '@/assets/projectsbg.jpg'
 
-
-interface Project {
-  title: string
-  description: string
-  image: string
-  technologies: string[]
-}
-
-const projects: Project[] = [
-  {
-    title: 'Proyecto 1',
-    description: 'Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum.',
-    image: '/placeholder-project.jpg',
-    technologies: ['react', 'node'],
-  },
-  {
-    title: 'Proyecto 2',
-    description: 'Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum.',
-    image: '/placeholder-project.jpg',
-    technologies: ['vue', 'express', 'mysql'],
-  },
-  {
-    title: 'Proyecto 3',
-    description: 'Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum.',
-    image: '/placeholder-project.jpg',
-    technologies: ['react', 'typescript', 'tailwind', 'vite'],
-  },
-]
 
 export function Projects() {
   return (
@@ -41,11 +16,11 @@ export function Projects() {
 
       <Grid cols={{ base: 1, md: 3 }} gap="lg">
         {projects.map((project) => (
-          <Card key={project.title}>
+          <Card key={project.id}>
             <div className="aspect-video bg-muted">
               <img
                 src={project.image}
-                alt={project.title}
+                alt={`Captura del proyecto ${project.title}`}
                 className="w-full h-full object-cover"
               />
             </div>
@@ -58,15 +33,33 @@ export function Projects() {
                 {project.description}
               </p>
 
-              <div className="flex gap-2">
+              {project.highlights && (
+                <ul className="text-xs text-muted-foreground mb-4 list-disc list-inside space-y-1">
+                  {project.highlights.map((highlight) => (
+                    <li key={highlight}>{highlight}</li>
+                  ))}
+                </ul>
+              )}
+
+              <div className="flex flex-wrap gap-2 mb-4">
                 {project.technologies.map((tech) => (
-                  <span
-                    key={tech}
-                    className="w-8 h-8 rounded-full bg-secondary"
-                    title={tech}
-                  />
+                  <Badge key={tech} variant="outline">
+                    {tech}
+                  </Badge>
                 ))}
               </div>
+
+              {project.githubUrl && (
+                <a
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button variant="secondary" size="sm">
+                    GitHub
+                  </Button>
+                </a>
+              )}
             </CardContent>
           </Card>
         ))}
