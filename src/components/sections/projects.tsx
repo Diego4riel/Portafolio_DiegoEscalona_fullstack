@@ -1,13 +1,13 @@
 // src/components/sections/projects.tsx
-import { SectionWrapper } from '@/components/shared/section-wrapper'
-import { SectionTitle } from '@/components/shared/section-title'
-import { Card, CardContent } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
-import { Grid } from '@/components/shared/grid'
-import { projects } from '@/data/projects'
-import projectsbg from '@/assets/projectsbg.jpg'
-
+import { SectionWrapper } from '@/components/shared/section-wrapper';
+import { SectionTitle } from '@/components/shared/section-title';
+import { Card, CardContent } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { Grid } from '@/components/shared/grid';
+import { projects } from '@/data/projects';
+import { FaGithub } from 'react-icons/fa';
+import projectsbg from '@/assets/projectsbg.jpg';
 
 export function Projects() {
   return (
@@ -26,12 +26,8 @@ export function Projects() {
             </div>
 
             <CardContent>
-              <h3 className="text-lg font-semibold text-foreground mb-2">
-                {project.title}
-              </h3>
-              <p className="text-sm text-muted-foreground mb-4">
-                {project.description}
-              </p>
+              <h3 className="text-lg font-semibold text-foreground mb-2">{project.title}</h3>
+              <p className="text-sm text-muted-foreground mb-4">{project.description}</p>
 
               {project.highlights && (
                 <ul className="text-xs text-muted-foreground mb-4 list-disc list-inside space-y-1">
@@ -50,12 +46,10 @@ export function Projects() {
               </div>
 
               {project.githubUrl && (
-                <a
-                  href={project.githubUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                   <Button variant="secondary" size="sm">
+                    <FaGithub className="h-4 w-4" />{' '}
+                    {/* Puedes ajustar el tamaño con clases de CSS o Tailwind */}
                     GitHub
                   </Button>
                 </a>
@@ -65,5 +59,5 @@ export function Projects() {
         ))}
       </Grid>
     </SectionWrapper>
-  )
+  );
 }
