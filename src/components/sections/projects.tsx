@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Grid } from '@/components/shared/grid';
 import { projects } from '@/data/projects';
 import { FaGithub } from 'react-icons/fa';
+import { FaGlobe } from 'react-icons/fa';
 import projectsbg from '@/assets/projectsbg.jpg';
 
 export function Projects() {
@@ -17,12 +18,13 @@ export function Projects() {
       <Grid cols={{ base: 1, md: 3 }} gap="lg">
         {projects.map((project) => (
           <Card key={project.id}>
-            <div className="aspect-video bg-muted">
+            <div className="aspect-video bg-muted relative">
               <img
                 src={project.image}
                 alt={`Captura del proyecto ${project.title}`}
                 className="w-full h-full object-cover"
               />
+              <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/30 to-transparent pointer-events-none" />
             </div>
 
             <CardContent>
@@ -48,9 +50,15 @@ export function Projects() {
               {project.githubUrl && (
                 <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                   <Button variant="secondary" size="sm">
-                    <FaGithub className="h-4 w-4" />{' '}
-                    {/* Puedes ajustar el tamaño con clases de CSS o Tailwind */}
-                    GitHub
+                    <FaGithub className="h-4 w-4" /> GitHub
+                  </Button>
+                </a>
+              )}
+
+              {project.liveUrl && (
+                <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                  <Button variant="secondary" size="sm">
+                    <FaGlobe className="h-4 w-4" /> Ver en vivo
                   </Button>
                 </a>
               )}
