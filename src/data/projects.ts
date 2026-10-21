@@ -6,8 +6,9 @@ export const projects: Project[] = [
     title: 'Clasificador de gastos con IA',
     description:
       'Aplicación web que automatiza la clasificación de gastos a partir de archivos CSV utilizando inteligencia artificial.',
-    image: '/projects/Clasificador_De_gastos.png',
+    image: 'projects/clasificadorigastos.png',
     technologies: ['Node.js', 'Express', 'SQLite3', 'Multer', 'csv-parser', 'OpenRouter'],
+    liveUrl: 'https://clasificador-de-gastos.vercel.app/',
     githubUrl: 'https://github.com/Diego4riel/Clasificador-de-gastos',
     highlights: [
       'Carga y procesamiento de archivos CSV',
