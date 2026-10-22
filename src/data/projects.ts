@@ -35,4 +35,23 @@ export const projects: Project[] = [
       'Indexación y conexión exitosa del sitio mediante Google Search Console.',
     ],
   },
+  {
+    id: 'cotizador_web',
+    title: 'Cotizador Web - Presupuestos Interactivos para PYMEs',
+    description:
+      'Aplicación web full stack que permite a pequeñas y medianas empresas configurar un proyecto digital y obtener un presupuesto transparente en tiempo real. El proyecto abarcó desde el diseño de la interfaz por pasos y el motor de cálculo de precios hasta la generación de propuestas en PDF, el envío de cotizaciones por correo y el despliegue en producción.',
+    image: 'projects/cotizadorweb.png',
+    technologies: ['React', 'Vite', 'Tailwind CSS', 'Node.js', 'Express', 'EmailJS', 'Vitest'],
+    liveUrl: 'https://cotizador-web-lvsr.vercel.app/',
+    highlights: [
+      'Flujo guiado de 4 pasos con resumen del presupuesto que se actualiza en tiempo real.',
+      'Motor de cálculo con 7 tipos de proyecto, precios dinámicos, recargo por urgencia, soporte y descuentos por tecnología y pago anticipado.',
+      'Conversión CLP/USD con el dólar observado, caché local y tasa de respaldo.',
+      'Generación de propuestas en PDF con folio, condiciones comerciales y vigencia.',
+      'Envío de cotizaciones por correo con EmailJS y respaldo mediante API Express con Nodemailer.',
+      'Seguridad del backend con validación de datos, rate limiting, CORS restringido y protección contra spam.',
+      'Interfaz responsive con modo claro/oscuro y mejoras de accesibilidad.',
+      'Pruebas automatizadas con Vitest y despliegue continuo en Vercel.',
+    ],
+  },
 ];
